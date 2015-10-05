@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="fribble">
 <head>
   <meta charset="UTF-8">
   <title>Fribble</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="css/app.css"/>
 </head>
-<body>
+<body ng-controller="AppCtrl">
   <div class="container">
    <div class="navbar">
      <div class="navbar-inner">
@@ -15,8 +15,13 @@
 
        </ul>
 
-     </div><-- end of navbar inner -->
+     </div><!-- end of navbar inner -->
    </div><!-- end of navbar -->
+   <div ng-controller="ShotsListCtrl" >
+     <ul>
+       <li class="thumbnail" ng-repeat="shot in list">{{shot.title}}</li>
+     </ul>
+   </div>
  </div><!--end of container -->
 
  <!--scripts -->
