@@ -14,13 +14,11 @@
 </div>
 
 <div class="row">
-  <div class="span6">
+  <div class="col-md-6">
     <img class="shot_image" ng-src="{{shot.images.normal}}">
 
-    <div class="page-header">
-      <h2>Responses</h2>
-    </div>
-    <div ng-repeat = "comment in comments.comments" class="media comment">
+
+   <!--  <div ng-repeat = "comment in comments.comments" class="media comment">
       <div class="pull-left">
         <img class="media-object" ng-src="{{comment.player.avatar_url}}">
       </div>
@@ -30,49 +28,48 @@
             {{comment.player.name}}
           </a>
         </strong>
-<!--        <p ng-bind-html-unsafe="comment.body"></p>   -->
+
       </div>
 
-    </div>
-    <button 
-      class="btn btn-primary" 
- <!--     ng-show="comments.page < comments.pages" -->
-  <!--    ng-click="comments.loadNextPage()"> -->
-      Load More Comments
-    </button>
+    </div> -->
+   
   </div>
 
-  <div class="span3">
+  <div class="col-md-6">
       <ul class="nav nav-list">
         <li>
-          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <i class="glyphicon glyphicon-thumbs-up"></i>
           Likes {{shot.likes_count}} 
         </li>
         <li>
-         <span class="glyphicon glyphicon-eye-open"></span>
+         <i class="glyphicon glyphicon-eye-open"></i>
           Views {{shot.views_count}} 
         </li>
         <li>
-         <span class="glyphicon glyphicon-bullhorn"></span>
+         <i class="glyphicon glyphicon-bullhorn"></i>
           Rebounds {{shot.rebounds_count}} 
         </li>
         <li>
-          <span class="glyphicon glyphicon-pencil"></span>
+          <i class="glyphicon glyphicon-pencil"></i>
           Comments {{shot.comments_count}} 
         </li>
         <li>
           <a class="globe-icon-link" href="{{shot.html_url}}">
-          <span class="glyphicon glyphicon-globe"></span> {{shot.user.html_url}}
- 
+          <i class="glyphicon glyphicon-globe"></i> {{shot.user.html_url}}
           </a>
         </li>
       </ul>
 
-  </div>
-  <div class="span3">
-    <h2>Rebounds</h2>
-    <div shot-list="rebounds"></div>
+  </div><!-- end of col-6 with icons -->
+  
+</div><!-- end of row -->
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
+    <ul class="comment-list">
+      <li class="comment-list-item" ng-repeat="comment in comments">
+      {{comment.body | htmlToPlaintext}}</li>
+    </ul>
   </div>
 </div>
-
 
