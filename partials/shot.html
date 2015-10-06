@@ -9,7 +9,7 @@
       {{shot.user.name}}
     </a>
     | 
-    <!-- {{shot.created_at | dabbbleDate:"MMM d, yyyy"}} -->
+   {{shot.created_at | dabbleDate: "MMM d, yyyy" }}
   </div>
 </div>
 
@@ -45,25 +45,25 @@
   <div class="span3">
       <ul class="nav nav-list">
         <li>
-          <i class="icon-heart"></i>
+          <span class="glyphicon glyphicon-thumbs-up"></span>
           Likes {{shot.likes_count}} 
         </li>
         <li>
-          <i class="icon-eye-open"></i>
+         <span class="glyphicon glyphicon-eye-open"></span>
           Views {{shot.views_count}} 
         </li>
         <li>
-          <i class="icon-share-alt"></i>
+         <span class="glyphicon glyphicon-bullhorn"></span>
           Rebounds {{shot.rebounds_count}} 
         </li>
         <li>
-          <i class="icon-comment"></i>
+          <span class="glyphicon glyphicon-pencil"></span>
           Comments {{shot.comments_count}} 
         </li>
         <li>
-          <a href="{{shot.html_url}}">
-            <i class="icon-globe"></i>
-            {{shot.user.html_url}}
+          <a class="globe-icon-link" href="{{shot.html_url}}">
+          <span class="glyphicon glyphicon-globe"></span> {{shot.user.html_url}}
+ 
           </a>
         </li>
       </ul>

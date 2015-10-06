@@ -48,3 +48,8 @@
 ul {
   list-style: none;
 }
+
+a.globe-icon-link.ng-binding {
+  padding: 0;
+ 
+}
