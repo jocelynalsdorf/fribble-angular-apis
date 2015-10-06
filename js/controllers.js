@@ -5,11 +5,16 @@ app.controller("AppCtrl", function AppCtrl($scope) {
   $scope.name = "Module";
 });
 
-app.controller("ShotsListCtrl", function ShotsListCtrl($scope, $http) {
-  $scope.list;
+app.controller("ShotsListCtrl", function ShotsListCtrl($scope, $http, $routeParams) {
+  var list =  $routeParams.list;
 
-  $http.get('https://api.dribbble.com/v1/shots?access_token=fc78dd533521b380630460a261a96967c0312a75ebfd4492d83f87a5654188b6').success(function(data){
+  $http.get('https://api.dribbble.com/v1/shots/?list=' + list +'&access_token=e348fac8697cca93da8077ca25156265785479e8b9f35425b4369cbd3ddf4a89').success(function(data){
     $scope.list = data;
      console.log(data);
   });
+});
+
+app.controller("ShotsCtrl", function ShotsListCtrl($scope, $routeParams, $http) {
+     console.log($routeParams); 
+
 });
