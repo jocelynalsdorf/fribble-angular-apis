@@ -5,8 +5,8 @@
   <div class="media-body">
     <h1>{{shot.title}}</h1>
     <span class="muted">by</span>
-    <a href="#/players/{{shot.player.username}}">
-      {{shot.player.name}}
+    <a href="#/users/{{shot.player.username}}">
+      {{shot.user.name}}
     </a>
     | 
     <!-- {{shot.created_at | dabbbleDate:"MMM d, yyyy"}} -->
@@ -46,24 +46,24 @@
       <ul class="nav nav-list">
         <li>
           <i class="icon-heart"></i>
-          {{shot.likes_count}} Likes
+          Likes {{shot.likes_count}} 
         </li>
         <li>
           <i class="icon-eye-open"></i>
-          {{shot.views_count}} Views
+          Views {{shot.views_count}} 
         </li>
         <li>
           <i class="icon-share-alt"></i>
-          {{shot.rebounds_count}} Rebounds
+          Rebounds {{shot.rebounds_count}} 
         </li>
         <li>
           <i class="icon-comment"></i>
-          {{shot.comments_count}} Comments
+          Comments {{shot.comments_count}} 
         </li>
         <li>
-          <a href="{{shot.short_url}}">
+          <a href="{{shot.html_url}}">
             <i class="icon-globe"></i>
-            {{shot.short_url}}
+            {{shot.user.html_url}}
           </a>
         </li>
       </ul>
