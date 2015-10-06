@@ -18,8 +18,17 @@
      </div><!-- end of navbar inner -->
    </div><!-- end of navbar -->
    <div ng-controller="ShotsListCtrl" >
-     <ul>
-       <li class="thumbnail" ng-repeat="shot in list">{{shot.title}}</li>
+     <ul class="thumbnails">
+       <li class="thumbnail" ng-repeat="shot in list">
+          <div class="thumbnail">
+            <a href="#/shots/{{shot.id}}">
+              <img ng-src="{{shot.images.teaser}}" />
+            </a>
+            <strong class="title">{{shot.title}}</strong>
+            <a class="player" href="#/players/{{shot.player.username}}">
+            {{shot.player.name}}
+            </a>
+       </li>
      </ul>
    </div>
  </div><!--end of container -->
